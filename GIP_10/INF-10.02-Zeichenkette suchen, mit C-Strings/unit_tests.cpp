@@ -35,10 +35,10 @@ TEST_CASE("Zeichenkette suchen, Text mit Laenge 20 Zeichen") {
 // Vorgegebene Testläufe müssen selbst als Testcases programmiert werden ...
 TEST_CASE("Vorgegebene Testlaeufe") {
 	REQUIRE(zeichenkette_suchen("abcdefg", "bcd99") == -1);
-	REQUIRE(zeichenkette_suchen("abcdefg", "efg") == 0);
+	REQUIRE(zeichenkette_suchen("abcdefg", "efg") == 4);
 	REQUIRE(zeichenkette_suchen("abc", "abcde") == -1);
-	REQUIRE(zeichenkette_suchen("012 abc abc 89", "abc") == 0);
-	REQUIRE(zeichenkette_suchen("xy abc abcdefgh", "abcde") == 0);
+	REQUIRE(zeichenkette_suchen("012 abc abc 89", "abc") == 4);
+	REQUIRE(zeichenkette_suchen("xy abc abcdefgh", "abcde") == 7);
 	REQUIRE(zeichenkette_suchen("abc defg", "abc d") == 0);
 	REQUIRE(zeichenkette_suchen("abc defg", "abc d") == 0);
 }

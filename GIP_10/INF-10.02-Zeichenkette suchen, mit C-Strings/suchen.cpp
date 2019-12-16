@@ -1,54 +1,47 @@
-#include <iostream>
 #include "suchen.h"
 
 using namespace std;
 
-const unsigned int line_max = 20;
+int bestimme_laenge(const char* text)
 
-int zeichenkette_suchen(char* text, char* zkette)
 {
-	int result = -1;
+	int laenge;
 
-	for (int i = 0, j = 0; text[i] != '\0'; i++)
+	for (laenge = 0;; laenge++)//Länge hochzählen
 	{
-		if (text[i] != zkette[j]) //Wenn die Zeichen unterschiedlich sind, soll erneut vom Anfang starten
+		if (text[laenge] == '\0')	//wenn ende erreicht, dann break
 		{
-			j = 0;
-			result = -1;
-		}
-		else
-		{
-			if (zkette[j + 1] == '\0') //Ist suchender String in der Zeichenkette
-			{
-				result = i - j; //Jetzige Position - Länge von zkette
-				break;
-			}
-			j++;
+			break;
 		}
 	}
-	return result;
+	return laenge;
 }
 
-int main()
-{
-	char text[line_max + 1];
-	char search[line_max + 1];
 
-	cout << "Bitte geben Sie den Text ein: ";
-	cin.getline(text, line_max);
+int zeichenkette_suchen(const char* text, const char* zkette) {
 
-	cout << "Bitte geben Sie die zu suchende Zeichenkette ein: ";
-	cin.getline(search, line_max);
+	int laenge_text = bestimme_laenge(text);		//länge von text bestimmen
+	int laenge_zkette = bestimme_laenge(zkette);	// länge von gesuchter zeichenkette bestimmen
 
-	int index = zeichenkette_suchen(text, search);
+	for (int i = 0; i < laenge_text; i++) { // text durchlaufen
 
-	if (index == -1)
-	{
-		cout << "Die Zeichenkette '" << search << "' ist NICHT in dem Text '" << text << "' enthalten." << std::endl;
+		if (text[i] == zkette[0]) { //wenn anfang von zkette gefunden
+
+			int r = 0;  // r zum zählen der zkette
+
+			for (int j = i; j < i + laenge_zkette; j++) { //j als i kopie, ohne i zu ändern
+
+				if (text[j] == zkette[r]) {
+					r++;
+				}
+				if (r == laenge_zkette) //wenn Zkette vollsändig erhalten
+				{
+					return i; //wenn die Bedinung zutrifft, gib "i" zurueck. "i" hat den Wert der aktuellen Position im Array "Text", wo "Zkette" beginnt
+				}
+			}
+		}
 	}
-	else
-	{
-		cout << "Die Zeichenkette '" << search << "' ist in dem Text '" << text << "' enthalten." << std::endl
-			<< "Sie startet ab Zeichen " << index << " (bei Zaehlung ab 0)." << std::endl;
-	}
+
+	return -1; //Zeichenkette kam nicht im Text vor
+
 }
