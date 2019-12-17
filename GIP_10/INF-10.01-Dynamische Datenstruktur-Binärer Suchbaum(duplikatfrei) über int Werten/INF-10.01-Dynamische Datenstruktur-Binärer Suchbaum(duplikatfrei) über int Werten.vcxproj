@@ -18,6 +18,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="binaerer_suchbaum.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="binaerer_suchbaum.cpp" />
+    <ClCompile Include="suchbaum_main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{D3144DE6-E81F-450B-A5EF-F0CF2C3ABD3A}</ProjectGuid>
@@ -137,12 +144,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Quelle.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="binaerer_suchbaum.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
