@@ -16,7 +16,7 @@ Suchbaum::BaumKnoten* Suchbaum::einfuegen(int value, BaumKnoten* root) {
 		BaumKnoten* current = root; //aktueller als Kopie von root
 		BaumKnoten* prev = nullptr; //vorheriger
 
-		while (current != nullptr) {
+		while (current != nullptr) { //solange nicht am ende angekommen
 
 			prev = current; //auf den vorherigen setzen (dieser geht eins weiter)
 
@@ -26,7 +26,7 @@ Suchbaum::BaumKnoten* Suchbaum::einfuegen(int value, BaumKnoten* root) {
 			else if (value < current->value) {
 				current = current->child_l;
 			}
-			else { //wert existiert bereits -> Schleife verlasen
+			else { //wert existiert bereits (value == current value) -> Schleife verlasen 
 				return root; //kein break-> ansonsten falsche ausführung
 			}
 		}
