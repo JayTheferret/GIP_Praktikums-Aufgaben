@@ -26,8 +26,6 @@ int count_living_neighbours(int zelle_x, int zelle_y, bool grid[][grid_size]) {
 		{+1, +1},
 	};
 
-	
-
 	for (int i = 0; i < 8; i++) {//deltas durchlaufen
 		//nachbar Positionen generieren
 		int x = zelle_x + deltas[i][0]; 
@@ -109,14 +107,14 @@ int main()
 			for (int x = 0; x < grid_size; x++) {
 
 				int living = count_living_neighbours(x, y, grid);//funktion-> lebende nachbarn zählen
-				if ((living == 2 || living == 3) && grid[x][y] == true) {//wenn zwei/drei Nachbarn, und zelle leben
+				if ((living == 2 || living == 3) && grid[x][y] == true) {//wenn zwei/drei Nachbarn, und zelle leben 
 					next_grid[x][y] = true;
 				}
-				else if (living == 3 && grid[x][y] == false) {
+				else if (living == 3 && grid[x][y] == false) { //wenn drei nachbarn und zelle tod
 					next_grid[x][y] = true;
 				}
 				else {
-					next_grid[x][y] = false;
+					next_grid[x][y] = false; //ansonsten zelle tod
 				}
 			}
 		}
