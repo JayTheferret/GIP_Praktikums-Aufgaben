@@ -1,81 +1,79 @@
-#include <string>
-#include "binaerer_suchbaum.h"
-
 #include <iostream>
+#include "binaerer_suchbaum.h";
 
-void einfuegen(Suchbaum::BaumKnoten*& head, Suchbaum::BaumKnoten* knoten)
-{
-    Suchbaum::BaumKnoten* current = head;
-    while (current)
-    {
-        if (knoten->data == current->data)
-        {
-            delete knoten;
-            return;
-        }
+Suchbaum::BaumKnoten* Suchbaum::einfuegen(int value, BaumKnoten* root) {
 
-        if (knoten->data < current->data)
-        {
-            if (current->left_child)
-                current = current->left_child;
-            else
-            {
-                current->left_child = knoten;
-                break;
-            }
-        }
+	if (root == nullptr) { //wenn Baum leer
+		
+		root = new BaumKnoten;
+		root->value = value; //zeigt auf wert -> schreibt neuen Wert rein
+		root->child_l = nullptr;
+		root->child_r = nullptr;
+	}
 
-        else if (knoten->data > current->data)
-        {
-            if (current->right_child)
-                current = current->right_child;
-            else
-            {
-                current->right_child = knoten;
-                break;
-            }
-        }
-    }
+	else {
+
+		BaumKnoten* current = root; //aktueller als Kopie von root
+		BaumKnoten* prev = nullptr; //vorheriger
+
+		while (current != nullptr) {
+
+			prev = current; //auf den vorherigen setzen (dieser geht eins weiter)
+
+			if (value > current->value) { //wert größer als current wert
+				current = current->child_r; //eins weiter -> rechts
+			}
+			else if (value < current->value) {
+				current = current->child_l;
+			}
+			else { //wert existiert bereits -> Schleife verlasen
+				return root; //kein break-> ansonsten falsche ausführung
+			}
+		}
+		BaumKnoten* child = new BaumKnoten; //neuen Knoten erstellen
+		child->value = value; //Knoten den wert übergeben
+		child->child_l = nullptr;
+		child->child_r = nullptr;
+
+		if (value > prev->value) {
+			prev->child_r = child; //rechts anhängen
+		}
+		else {
+			prev->child_l = child;//links anhängen
+		}
+	}
+
+	return root;
 }
 
-void Suchbaum::einfuegen(Suchbaum::BaumKnoten*& head, int data)
-{
-    BaumKnoten* knoten = new BaumKnoten;
-    knoten->data = data;
-    knoten->parent = nullptr;
-    knoten->left_child = nullptr;
-    knoten->right_child = nullptr;
+void Suchbaum::knoten_ausgeben(BaumKnoten* knoten, int tiefe) {
 
-    if (!head)
-    {
-        head = knoten;
-        return;
-    }
+	if (knoten == nullptr) { //wenn aktueller teilbaum leer -> return
+		return;
+	}
 
-    einfuegen(head,knoten);
+	// rechten Teilbaum ausgeben
+
+	knoten_ausgeben(knoten->child_r, tiefe + 1);
+
+	//aktuellen wert ausgeben
+
+	for (int i = 0; i < tiefe; i++) { 
+		std::cout << "++";
+	}
+	std::cout << knoten->value << std::endl; //wert ausgeben
+
+	// linken Teilbaum ausgeben
+
+	knoten_ausgeben(knoten->child_l, tiefe+1);
 }
 
-void Suchbaum::ausgeben(BaumKnoten* head)
-{
-    knoten_ausgeben(head, 0);
-}
+void Suchbaum::ausgeben(BaumKnoten* tree){
 
-void Suchbaum::knoten_ausgeben(BaumKnoten* knoten, int depth)
-{
-    if (!knoten)
-    {
-        std::cout << "Leerer Baum." << std::endl;
-        return;
-    }
-
-    if (knoten->right_child)
-        knoten_ausgeben(knoten->right_child, depth + 1);
-
-    for (int i = 0; i < depth; ++i)
-        std::cout << "++";
-
-    std::cout << knoten->data << std::endl;
-
-    if (knoten->left_child)
-        knoten_ausgeben(knoten->left_child, depth + 1);
+	if (tree == nullptr) {
+		std::cout << "Leerer Baum." << std::endl; //falls Baum leer
+	}
+	else {
+		knoten_ausgeben(tree, 0); //baum an ausgabefunktion geben, tiefe mit null starten
+	}
 }

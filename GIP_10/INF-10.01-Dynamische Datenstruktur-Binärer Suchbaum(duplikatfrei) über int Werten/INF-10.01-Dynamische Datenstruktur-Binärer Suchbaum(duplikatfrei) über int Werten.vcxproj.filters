@@ -20,10 +20,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="binaerer_suchbaum.cpp">
+    <ClCompile Include="suchbaum_main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="suchbaum_main.cpp">
+    <ClCompile Include="binaerer_suchbaum.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,24 +1,26 @@
 #include <iostream>
 #include "binaerer_suchbaum.h"
 
-using namespace Suchbaum;
+using namespace std;
 
-int main()
-{
-    int input = 0;
+int main() {
 
-    BaumKnoten* head = nullptr;
+	Suchbaum::BaumKnoten* tree = nullptr;
+	int value = 0;
 
-    ausgeben(head);
+	cout << "Naechster Wert (99 beendet): ? ";
+	cin >> value;
 
-    while (true)
-    {
-        std::cout << "Naechster Wert (99 beendet): ? ";
-        std::cin >> input;
-        if (input == 99)
-            break;
-        einfuegen(head, input);
-    }
+	while(value != 99) {
+		tree = Suchbaum::einfuegen(value, tree); //Baum aktualisieren
 
-    ausgeben(head);
+		cout << "Naechster Wert (99 beendet): ? ";
+		cin >> value;
+
+	}
+
+	Suchbaum::ausgeben(tree);
+
+	system("PAUSE");
+	return 0;
 }
