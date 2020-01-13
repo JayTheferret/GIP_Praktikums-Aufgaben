@@ -24,6 +24,9 @@
     <ClInclude Include="catch.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="CImgGIP05Mock.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyRectangle.cpp">

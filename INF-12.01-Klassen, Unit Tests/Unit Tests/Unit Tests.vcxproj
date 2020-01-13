@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClInclude Include="catch.h" />
     <ClInclude Include="CImgGIP05.h" />
+    <ClInclude Include="CImgGIP05Mock.h" />
     <ClInclude Include="MyRectangle.h" />
   </ItemGroup>
   <ItemGroup>

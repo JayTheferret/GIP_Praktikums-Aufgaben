@@ -1,5 +1,8 @@
 #pragma once
-#include "CImgGIP05.h"
+
+
+//#include "CImgGIP05.h"
+#include "CImgGIP05Mock.h"
 
 class MyRectangle {
 
@@ -45,10 +48,13 @@ public:
 		y2 = set_y2;
 	}
 
+	//zeichnen
+
 	void draw() {
 
 		gip_draw_rectangle(x1, y1, x2, y2, blue);
-	}
+	};
+
 	bool does_not_collide_with(const MyRectangle& other) const;
 
 };

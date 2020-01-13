@@ -1,4 +1,4 @@
-#pragma once
+
 #pragma once
 /*
 CImg-1.6.4
