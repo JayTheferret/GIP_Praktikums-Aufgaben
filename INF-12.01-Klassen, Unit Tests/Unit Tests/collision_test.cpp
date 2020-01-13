@@ -1,7 +1,5 @@
-// Datei: collision_test.cpp
-
 #include "catch.h"
-#include "MyRectangle.h";
+#include "MyRectangle.h"
 
 TEST_CASE("Pruefung der Methode MyRectangle::does_not_collide_with()") {
 

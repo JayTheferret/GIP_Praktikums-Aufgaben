@@ -1,4 +1,5 @@
 #pragma once
+#include "CImgGIP05.h"
 
 class MyRectangle {
 
@@ -12,17 +13,16 @@ private:
 public:
 
 	//Konstruktor
-		//Attribute setzen
 
-	MyRectangle(int x1, int y1, int x2, int y2) : x1(x1), y1(y1), x2(x2), y2(y2){}
+	MyRectangle(int, int, int, int);
 
 	//ohne Angaben von Parametern (übernimmt standart werte -> private)
 
-	MyRectangle(){}
+	//MyRectangle(){}
 
 	//getter und Setter setzen(möglichkeit auf Wert änderungen)
 
-	void set_x1(int set_x1) { x1 = set_x1; }
+	void set_x1(int set_x1) { x1 = set_x1; } //wenn namen gleich dann this->x1 = x1 (this auf private)
 	int get_x1() const { return x1; }
 
 	void set_y1(int set_y1) { y1 = set_y1; }
@@ -45,22 +45,7 @@ public:
 		y2 = set_y2;
 	}
 
-	void draw() {
-
-		gip_draw_rectangle(x1, y1, x2, y2, blue);
-	}
-
-	//Kollisionserkennung
-
-	bool does_not_collide_with(const MyRectangle& other) const {
-		
-		if (x1 < other.x2 &&  //rechte Kante kleiner -> weiter links
-			x2 > other.x1 && 
-			y1 < other.y2 &&  //obere Kante
-			y2 > other.x1) {
-			return false; //keine Kollision
-		}
-
-		//else { return true;}
-	}
+	void draw();
+	bool does_not_collide_with(const MyRectangle& other) const;
+	
 };
