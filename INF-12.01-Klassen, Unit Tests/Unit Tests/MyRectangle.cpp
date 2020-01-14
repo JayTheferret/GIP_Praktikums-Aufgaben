@@ -1,5 +1,8 @@
 #include "MyRectangle.h"
 
+//#include "CImgGIP05.h"
+#include "CImgGIP05Mock.h"
+
 #define  CIMGGIP_MAIN
 
 
@@ -22,4 +25,9 @@ bool MyRectangle::does_not_collide_with(const MyRectangle& other) const {
 		return true; }
 
 	return false;
+}
+
+void MyRectangle::draw() {
+
+	gip_draw_rectangle(x1, y1, x2, y2, blue);
 }

@@ -1,9 +1,10 @@
 #pragma once
+
 #include "CImgGIP05.h"
 
 class MyRectangle {
 
-private:
+private: //"geschützt"
 
 	int x1 = 0;
 	int y1 = 0;
@@ -12,7 +13,7 @@ private:
 
 public:
 
-	//Konstruktor
+	//Konstruktor (Instanz/Objekt(
 
 	MyRectangle(int, int, int, int);
 
@@ -20,8 +21,8 @@ public:
 
 	//MyRectangle(){}
 
-	//getter und Setter setzen(möglichkeit auf Wert änderungen)
-
+	//getter und Setter setzen(möglichkeit auf Wert änderungen ohne Uhr Werte zu überschreiben)
+	//bedingungen für veränderung festlegen
 	void set_x1(int set_x1) { x1 = set_x1; } //wenn namen gleich dann this->x1 = x1 (this auf private)
 	int get_x1() const { return x1; }
 
@@ -44,6 +45,8 @@ public:
 		x2 = set_x2;
 		y2 = set_y2;
 	}
+
+	//Methoden
 
 	void draw();
 	bool does_not_collide_with(const MyRectangle& other) const;

@@ -49,11 +49,12 @@ public:
 	}
 
 	//zeichnen
+	void draw();
 
-	void draw() {
+	/*void draw() {
 
 		gip_draw_rectangle(x1, y1, x2, y2, blue);
-	};
+	};*/
 
 	bool does_not_collide_with(const MyRectangle& other) const;
 
