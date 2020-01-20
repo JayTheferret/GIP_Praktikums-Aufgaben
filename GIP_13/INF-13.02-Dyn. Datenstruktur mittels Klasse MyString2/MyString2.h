@@ -29,4 +29,7 @@ public:
 	void				set_anker(CharListenKnoten* set_anker) { anker = set_anker; }
 
 	MyString2();
+	MyString2(const std::string& str);
+
+	void append(char p_data);
 };
