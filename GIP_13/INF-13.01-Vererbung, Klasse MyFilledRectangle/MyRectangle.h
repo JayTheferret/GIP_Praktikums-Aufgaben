@@ -6,8 +6,8 @@ class MyRectangle {
 
 protected: // kann von Objekten derselben Klasse gesehen/ genutzt werden//"geschützt"
 
-	int x1 = 0;
-	int y1 = 0;
+	int x1 =  0;
+	int y1 =  0;
 	int x2 = 20;
 	int y2 = 20;
 

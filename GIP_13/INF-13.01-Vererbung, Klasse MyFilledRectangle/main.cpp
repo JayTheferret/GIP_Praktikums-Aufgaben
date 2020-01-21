@@ -12,7 +12,7 @@ int main() {
         int x2_1 = gip_random(x1_1, gip_win_size_x - 1);
         int y2_1 = gip_random(y1_1, gip_win_size_y - 1);
 
-        MyFilledRectangle r1(x1_1, y1_1, x2_1, y2_1);
+        MyFilledRectangle r1(x1_1, y1_1, x2_1, y2_1); //myFilledRectangle anstatt rectangle
 
         int x1_2 = gip_random(0, gip_win_size_x - 1);
         int y1_2 = gip_random(0, gip_win_size_y - 1);

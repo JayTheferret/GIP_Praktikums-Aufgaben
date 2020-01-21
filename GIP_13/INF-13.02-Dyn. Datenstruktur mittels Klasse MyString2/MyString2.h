@@ -1,35 +1,31 @@
 #pragma once
-
-/*
-Die Klasse speichere die Buchstaben der Zeichenkette intern dadurch,
-dass die Buchstaben in einer dynamischen Liste von CharListenKnoten
-auf dem Heap gespeichert werden, jeder Buchstabe einzeln in einem
-eigenen CharListenKnoten. Es sollen auch leere Zeichenketten
-gespeichert werden können. Es sollen nie mehr CharListenKnoten
-vorhanden sein als auch wirklich Buchstaben zu speichern sind. Es gebe
-auch keine interne Nullterminierung im MyString2, d.h. es werden nur die
-„wirklichen Buchstaben“ als CharListenKnoten Einträge gespeichert.
-
-Die Klasse MyString2 habe dazu nur ein Attribut CharListenKnoten*
-anker, welches den Pointer auf den ersten CharListenKnoten (falls
-vorhanden, sonst nullptr) speichert.
-*/
-
 #include "CharListenKnoten.h"
 #include <string>
 
 class MyString2 {
 
 private:
+
 	CharListenKnoten* anker;
 
 public:
 
 	CharListenKnoten*	get_anker() { return anker; }
-	void				set_anker(CharListenKnoten* set_anker) { anker = set_anker; }
+	void				set_anker(CharListenKnoten* new_anker) { anker = new_anker;  }
 
-	MyString2();
-	MyString2(const std::string& str);
+	MyString2(); //Konstruktor
+	~MyString2(); //Destruktor -> löschen
+	MyString2(std::string str);//Kostruktor für string
+	MyString2(const MyString2& other); //Copy Konstruktor (erstellt direkt aus Kopie)
+	MyString2& operator=(const MyString2& other); // Assignment Operator -> copy->neu erstellt lates löschen
+	MyString2 operator +(char c) const;   //assignment -> copy +anhang
 
-	void append(char p_data);
+	//Methoden
+	void append(char p_data); //anfügen
+	void delete_all(); //löschen
+	unsigned int length(); //länge ermitteln
+	char at(unsigned int pos); //data an position
+	std::string to_string() const; //in string wandeln
+	CharListenKnoten* deep_copy() const; //kopieren
+	
 };

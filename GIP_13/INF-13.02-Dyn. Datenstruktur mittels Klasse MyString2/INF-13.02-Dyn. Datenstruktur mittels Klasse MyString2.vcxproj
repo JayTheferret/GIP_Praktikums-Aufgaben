@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{2B443DB2-EBFB-41E9-AA25-51D7D361166A}</ProjectGuid>
+    <ProjectGuid>{BB7A75AF-A2F5-4D70-9388-C67BEE93CDC9}</ProjectGuid>
     <RootNamespace>INF1302DynDatenstrukturmittelsKlasseMyString2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -140,8 +140,13 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyString2.cpp" />
+    <ClCompile Include="unit_testes_mystring2_3.cpp" />
+    <ClCompile Include="unit_tests_append.cpp" />
     <ClCompile Include="unit_tests_charlistenknoten.cpp" />
+    <ClCompile Include="unit_tests_deep_copy.cpp" />
+    <ClCompile Include="unit_tests_delete.cpp" />
     <ClCompile Include="unit_tests_mystring2_1.cpp" />
+    <ClCompile Include="unit_tests_mystring2_2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="catch.h" />

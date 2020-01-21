@@ -1,21 +1,25 @@
 #pragma once
 
-class CharListenKnoten
-{
-private:
+//classe für die kette -> anker in mystring
 
-    CharListenKnoten* next; //einfach verkettet in Vorwärtsrichtung über einen CharListenKnoten* next
-    char              data; //„Nutzlast“ jedes CharListenKnoten sei ein char data
+//basieren auf dem struct listenknoten
+class CharListenKnoten {
+
+private:
+    //einfach verkettet
+	CharListenKnoten* next;
+	char data;
 
 public:
 
-    CharListenKnoten(char c = 0) : data(c), next(nullptr) {}
+    CharListenKnoten(char c = 0): data(c), next(nullptr){}
 
     //Setter und Getter
 
     CharListenKnoten* get_next() { return next; }
-    void set_next(CharListenKnoten* set_next) { next = set_next; }
+    void set_next(CharListenKnoten* new_next) { next = new_next; }
 
     char get_data() { return data; }
-    void set_data(char set_data) { data = set_data; }
+    void set_data(char new_data) { data = new_data; }
+
 };

@@ -1,6 +1,7 @@
 #pragma once
 #include "MyRectangle.h"
 
+//erbt von MyRectangle
 class MyFilledRectangle : public MyRectangle {
 private:
 	

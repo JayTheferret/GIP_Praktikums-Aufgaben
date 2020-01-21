@@ -15,27 +15,42 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="unit_tests_charlistenknoten.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="MyString2.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="unit_testes_mystring2_3.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="unit_tests_mystring2_2.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="unit_tests_deep_copy.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="unit_tests_delete.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="unit_tests_append.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="unit_tests_mystring2_1.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="unit_tests_charlistenknoten.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MyString2.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
     <ClInclude Include="CharListenKnoten.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="catch.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="MyString2.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
